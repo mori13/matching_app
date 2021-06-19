@@ -4,7 +4,7 @@
       <nav>
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-            <li><%= current_user.name %></li>
+            <h2><%= @user.name %></h2>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 仮のプルダウン

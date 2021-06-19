@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get 'home/index'
+  get "users/show" => "users#show"
   
   get 'rooms/index'
   get 'rooms/show'
