@@ -1,3 +1,15 @@
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  font-family: cursive,serif;
+  color: white;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

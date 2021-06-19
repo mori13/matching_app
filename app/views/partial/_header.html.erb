@@ -1,10 +1,10 @@
-<header class="navbar navbar-fixed-top ">
+<header class="navbar navbar-fixed-top navbar-brand bg-dark">
     <div class="container">
       <%= link_to "pote share", '#', id: "logo" %>
       <nav>
-        <ul class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav  ">
           <% if user_signed_in? %>
-            <li><%= @current_user.name %></li>
+            <li><%= current_user %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">仮のプルダウン</a>
               <ul class="dropdown-menu">
@@ -14,8 +14,12 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "ログイン", 'users/sign_in',class: "btn btn-primary"%></li>
-            <li><%= link_to "会員登録", 'users/new' ,class: "btn btn-success"%></li>
+            <div class="btn-toolbar">
+              <div class="btn-group">
+                <%= link_to "ログイン", new_user_session_path,class: "btn btn-primary"%>
+                <%= link_to "会員登録", 'users/new' ,class: "btn btn-success"%>
+              </div>
+            </div>
           <% end %>
         </ul>
       </nav>
