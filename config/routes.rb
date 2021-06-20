@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'home#index'
-  get 'home/index'
+  devise_for :users, controllers: {registrations: 'users/registrations'}
   get "users/show" => "users#show"
+  get "users/profile" => "users#profile"
+  post "users/profile" => "users#update"
+
+  root 'home#index'
+  
   
   get 'rooms/index'
   get 'rooms/show'
