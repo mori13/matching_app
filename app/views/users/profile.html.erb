@@ -1,5 +1,11 @@
 
-<%= form_for @user,url:users_profile_path do |f| %>
+<%= form_for @user,users_profile_path do |f| %>
+ 
+  <div class="field">
+    <%= f.label :userimage %><br />
+    <%= f.file_field :userimage,autofocus: true, autocomplete: "userimage" %>
+  </div>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>

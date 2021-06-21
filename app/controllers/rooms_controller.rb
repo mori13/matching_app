@@ -1,14 +1,16 @@
 class RoomsController < ApplicationController
   def index
-  end
-
-  def show
+    @rooms = Room.all
   end
 
   def new
+    @room = Room.new
   end
 
   def create
+  end
+
+  def show
   end
 
   def edit
