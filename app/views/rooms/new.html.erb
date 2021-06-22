@@ -1,2 +1,29 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<h1>ルーム情報登録</h1>
+<%= form_for @room do |f| %>
+
+  <div class="field">
+    <%= f.label :room_name, "ルーム名"%>
+    <%= f.text_field :room_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room_intr, "ルーム紹介"%>
+    <%= f.text_area :room_intr %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room_price, "料金"%>
+    <%= f.text_area :room_price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :roomplace, "住所"%>
+    <%= f.text_field :roomplace %>
+  </div>  
+  
+  <div class="field">
+      <%= f.label :room_image %><br />
+      <%= f.file_field :roomimage,autofocus: true, autocomplete: "roomimage" %>
+  </div>
+  <%= f.submit"登録完了する"%>
+<% end %>
