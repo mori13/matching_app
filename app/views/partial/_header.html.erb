@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-brand bg-dark">
+    <div class="container">
+      <%= link_to "pote share", "#", id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+            <div class= "username"><%= current_user.name %></div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                仮のプルダウン
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><%= link_to "設定", users_show_path ,class: "dropdown-item"%></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "dropdown-item"%></li>
+              </ul>
+            </div>
+          <% else %>
+            <div class="btn-toolbar">
+              <div class="btn-group">
+                <%= link_to "ログイン", new_user_session_path,class: "btn btn-primary"%>
+                <%= link_to "会員登録", new_user_registration_path ,class: "btn btn-success"%>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
