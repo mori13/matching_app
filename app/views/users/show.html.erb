@@ -1,0 +1,12 @@
+<%= link_to 'アカウント', users_show_url %>
+<%= link_to 'プロフィール', users_profile_url %>
+
+
+<h1>アカウント</h1>
+<p>メールアドレス</p>
+<p><%= @user.email %></p>
+<p>パスワード</p>
+<p><%= "********" %></p>
+
+<%= link_to "編集", edit_user_registration_path,class: "btn btn-primary"%>
+

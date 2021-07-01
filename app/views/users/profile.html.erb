@@ -1,0 +1,10 @@
+<%= link_to 'アカウント', users_show_url %>
+<%= link_to 'プロフィール', users_profile_url %>
+
+<h1>プロフィール</h1>
+<p>名前</p>
+<p><%= @user.name %></p>
+<p>自己紹介</p>
+<p><%= @user.introduction %></p>
+
+<%= link_to "編集", users_mypage_url,class: "btn btn-primary"%>
