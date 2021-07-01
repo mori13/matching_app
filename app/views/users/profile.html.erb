@@ -2,6 +2,11 @@
 <%= link_to 'プロフィール', users_profile_url %>
 
 <h1>プロフィール</h1>
+<% if @user.myself? %>
+  <%= image_tag @user.myself.url %>
+<% else %>
+  <%= image_tag "/assets/default_img.png", :size => '100x100' %>
+<% end %>
 <p>名前</p>
 <p><%= @user.name %></p>
 <p>自己紹介</p>
