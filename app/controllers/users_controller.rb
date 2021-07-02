@@ -13,8 +13,10 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(params.permit(:myself, :name, :introduction))
-    redirect_to users_show_url
+    if @user.update(params.permit(:myself, :name, :introduction))
+      flash.now[:notice] = "情報を更新しました"
+      redirect_to users_show_url
+    end
   end
 
 end
