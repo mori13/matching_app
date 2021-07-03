@@ -1,22 +1,23 @@
 <header class="navbar navbar-fixed-top navbar-brand bg-dark">
     <div class="container">
-      <%= link_to "pote share", "#", id: "logo" %>
+      <%= link_to "pote share", root_path, id: "logo" %>
       <nav>
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
             <div class= "username"><%= current_user.name %></div>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <% if @user.myself? %>
-                  <%= image_tag @user.myself.thumb.url %>
+                <% if current_user.myself? %>
+                  <%= image_tag current_user.myself.thumb.url %>
                 <% else %>
                   <%= image_tag "/assets/default_img.png", :size => '50x50' %>
                 <% end %>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><%= link_to "設定", users_show_url ,class: "dropdown-item"%></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete,class: "dropdown-item"%></li>
+              <li><%= link_to "設定", users_show_path ,class: "dropdown-item"%></li>
+              <li><%= link_to "部屋を登録する", rooms_new_path ,class: "dropdown-item"%></li>
+              <li><%= link_to "登録済みルーム一覧", rooms_index_path ,class: "dropdown-item"%></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>
               </ul>
             </div>
           <% else %>

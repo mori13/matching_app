@@ -1,0 +1,33 @@
+<%= form_with model: @rooms do |f| %>
+
+  <div class="field">
+    <%= f.label "ルーム名" %><br />
+    <%= f.text_field :room_name, autofocus: true, autocomplete: "room_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "ルーム紹介" %><br />
+    <%= f.text_area :room_intr, autofocus: true, autocomplete: "room_intr" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "料金" %><br />
+    <%= f.number_field :room_price, autofocus: true, autocomplete: "room_price" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "住所" %><br />
+    <%= f.text_field :room_place, autofocus: true, autocomplete: "room_place" %>
+  </div>
+   
+  <div class="field">
+    <%= f.label "ルーム画像" %><br />
+    <%= f.file_field :roomphoto,autofocus: true, autocomplete: "roomphoto" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+
