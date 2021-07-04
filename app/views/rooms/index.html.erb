@@ -14,8 +14,8 @@
     <% @rooms.each do |room| %>
       <tr>
         <td><%= room.room_name %></td>
-        <td><%= room.roomphoto %></td>
-        <td><%= room.room_intro %></td>
+        <td><%= image_tag room.roomphoto.url, :size => '50x50' %></td>
+        <td><%= room.room_intr %></td>
         <td><%= room.room_price %></td>
         <td><%= room.created_at %></td>
       </tr>
